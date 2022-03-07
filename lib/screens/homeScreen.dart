@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:superbank_app/screens/homeScreenContent.dart';
 import 'package:superbank_app/screens/atmCardScreen.dart';
+import 'package:superbank_app/screens/qrcodeScreen.dart';
 import 'package:superbank_app/screens/settingScreen.dart';
 import 'package:superbank_app/screens/contactScreen.dart';
 
@@ -15,6 +16,7 @@ class _homeScreenState extends State<homeScreen> {
   List pages = [
     const HomeScreenContent(),
     const AtmCardScreen(),
+    const QRCodeScreen(),
     TransactionScreen(),
     const SettingsScreen(),
   ];
@@ -49,6 +51,10 @@ class _homeScreenState extends State<homeScreen> {
           BottomNavigationBarItem(
             label: "",
             icon: Icon(Icons.payment_rounded),
+          ),
+          BottomNavigationBarItem(
+            label: "",
+            icon: Icon(Icons.qr_code_2_rounded),
           ),
           BottomNavigationBarItem(
             label: "",

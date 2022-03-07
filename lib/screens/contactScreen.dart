@@ -36,8 +36,8 @@ class TransactionScreen extends StatelessWidget {
                       autofocus: false,
                       decoration: InputDecoration(
                         focusColor: Colors.black,
-                        suffixIcon: Icon(Icons.search),
-                        contentPadding: EdgeInsets.all(15.0),
+                        suffixIcon: const Icon(Icons.search),
+                        contentPadding: const EdgeInsets.all(15.0),
                         suffixIconColor: Colors.black87,
                         hintText: "Search contact",
                         border: OutlineInputBorder(
@@ -124,7 +124,73 @@ class TransactionScreen extends StatelessWidget {
                   ],
                 ), //tab 1
                 Column(), //tab 2
-                Column(), //tab 3
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Center(
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'You sent a  ',
+                              style: DefaultTextStyle.of(context).style,
+                              children: const <TextSpan>[
+                                TextSpan(
+                                  text: '\$ 30 ',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: 'bill to 4 people',
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Stack(
+                          children: const [
+                            Positioned(
+                              child: Image(
+                                image: AssetImage("aeesha/sewa.png"),
+                                height: 60,
+                              ),
+                              left: 40,
+                            ),
+                            Positioned(
+                              child: Image(
+                                image: AssetImage("images/sewa.png"),
+                                height: 60,
+                              ),
+                              left: 40,
+                            ),
+                            Positioned(
+                              child: Image(
+                                image: AssetImage("images/aeesha.png"),
+                                height: 60,
+                              ),
+                              left: 80,
+                            ),
+                            Positioned(
+                              child: Image(
+                                image: AssetImage("images/sewa.png"),
+                                height: 60,
+                              ),
+                              left: 120,
+                            ),
+                          ],
+                          alignment: Alignment.centerRight,
+                        )
+                      ],
+                    ),
+                  ],
+                ), //tab 3
               ],
             ),
           )),

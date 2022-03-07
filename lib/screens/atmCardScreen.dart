@@ -78,9 +78,14 @@ class AtmCardScreen extends StatelessWidget {
           ),
           ElevatedButton.icon(
             style: ElevatedButton.styleFrom(
+              side: const BorderSide(
+                width: 0.2,
+                color: Colors.black87,
+              ),
               primary: Colors.white,
               textStyle: const TextStyle(fontWeight: FontWeight.bold),
               minimumSize: const Size(315, 50),
+              elevation: 0.1,
             ),
             onPressed: () {},
             icon: const Icon(
@@ -89,7 +94,10 @@ class AtmCardScreen extends StatelessWidget {
             ),
             label: const Text(
               "Add Card",
-              style: TextStyle(color: Colors.black87),
+              style: TextStyle(
+                color: Colors.black87,
+                fontFamily: "Chirp",
+              ),
             ),
           )
         ],

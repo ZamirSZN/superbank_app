@@ -27,7 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  flutter_map: any
+  
   flutter:
     sdk: flutter
     
@@ -37,6 +37,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
 
   lottie: ^1.2.2
+  flutter_map:
+  latlong: ^0.6.1
+  
+
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +71,6 @@ flutter:
    - images/mastercard_icon.png
    - images/paypal_icon.png
    - images/visa_icon.png
-   - images/mastercard_background.png
    - images/aeesha.png
    - images/armfold_guy.png
    - images/hair_guy.png

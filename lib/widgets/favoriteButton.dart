@@ -8,10 +8,10 @@ class FavoriteButton extends StatefulWidget {
 }
 
 class _FavoriteButtonState extends State<FavoriteButton> {
+  bool is_favorite = false;
   @override
   Widget build(BuildContext context) {
-    bool contact_is_favorite = false;
-    Icon favoriteContact = contact_is_favorite
+    Icon favorite_icon = is_favorite
         ? const Icon(Icons.star_rate_rounded)
         : const Icon(
             Icons.star_rounded,
@@ -20,10 +20,10 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     return IconButton(
       padding: EdgeInsets.all(0.0),
       tooltip: "favorite",
-      icon: favoriteContact,
+      icon: favorite_icon,
       onPressed: () {
         setState(() {
-          contact_is_favorite = !contact_is_favorite;
+          is_favorite = !is_favorite;
         });
       },
     );

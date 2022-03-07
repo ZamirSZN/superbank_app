@@ -1,6 +1,6 @@
-import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lottie/lottie.dart';
 
 class ConfirmPayScreen extends StatelessWidget {
   const ConfirmPayScreen({Key? key}) : super(key: key);
@@ -113,8 +113,8 @@ class ConfirmPayScreen extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
-                  Navigator.pop(context);
+                  //Navigator.pop(context);
+                  //Navigator.pop(context);
                   // fix this to make it the app navigate  back to home screen after money is sent
 
                   Navigator.of(context).restorablePush(_dialogBuilder);
@@ -142,15 +142,100 @@ class ConfirmPayScreen extends StatelessWidget {
     return DialogRoute<void>(
       context: context,
       builder: (BuildContext context) => SimpleDialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(11),
+        ),
         children: [
-          Container(
-            child: Lottie.asset(
-              "lottie/sent.json",
-            ),
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.close),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  )
+                ],
+              ),
+              Container(
+                height: 150,
+                color: Colors.white70,
+                child: Lottie.asset(
+                  "lottie/sent.json",
+                ),
+              ),
+              Center(
+                child: Column(
+                  children: [
+                    const Text(
+                      "Money sent",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Chirp",
+                        fontSize: 20,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    RichText(
+                      text: const TextSpan(
+                        text: '\$ 100.00 ',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color.fromRGBO(
+                            242,
+                            178,
+                            144,
+                            1,
+                          ),
+                          fontFamily: "Chirp",
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'to Aeesha Sabiu',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.grey,
+                              fontFamily: "Chirp",
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                  ],
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text(
+                  "Transaction Detail",
+                  style: TextStyle(
+                    color: Color.fromRGBO(
+                      242,
+                      178,
+                      144,
+                      1,
+                    ),
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  elevation: 0,
+                ),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 }
-//penkele messi

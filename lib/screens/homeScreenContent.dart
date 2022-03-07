@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:superbank_app/widgets/atmCardWidget.dart';
+import 'package:superbank_app/widgets/atmMapWidget.dart';
 import 'package:superbank_app/widgets/walletWidget.dart';
 
 class HomeScreenContent extends StatefulWidget {
@@ -80,10 +81,10 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 18, right: 18),
+              padding: const EdgeInsets.only(left: 18, right: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -106,7 +107,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             Container(
               color: Colors.white,
@@ -120,7 +121,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                       card_width: 300,
                       card_text_color: Colors.white,
                       card_icon: "images/visa_icon.png",
-                      card_balance: "1,260.28",
+                      card_balance: "9,460.28",
                       card_number: "**** **** **** 7735",
                       card_expiry_date: "08/28",
                       card_background_color: Colors.black87,
@@ -130,7 +131,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                       card_width: 300,
                       card_text_color: Colors.black87,
                       card_icon: "images/mastercard_icon.png",
-                      card_balance: "1,260.28",
+                      card_balance: "260.78",
                       card_number: "**** **** **** 7735",
                       card_expiry_date: "08/28",
                       card_background_color: Color.fromRGBO(242, 178, 144, 1),
@@ -150,10 +151,10 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 1,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 18, right: 18),
+              padding: const EdgeInsets.only(left: 18, right: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -176,10 +177,15 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 1,
             ),
             Expanded(
-              child: Container(),
+              child: Container(
+                child: AtmMapWidget(),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
             ),
           ],
         ),
